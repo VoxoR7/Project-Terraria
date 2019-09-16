@@ -13,6 +13,6 @@
 
 #define HAUTEUR_MAX 500
 
-#define GRAVITE 5
+#define GRAVITE 1
 
 #endif

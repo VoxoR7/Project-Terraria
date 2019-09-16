@@ -15,3 +15,6 @@ strcpy( (configTouche + DROITE)->descriptif, "droite");
 
 strcpy( (configTouche + GAUCHE)->descriptif, "gauche");
 (configTouche + GAUCHE)->keyCode = SDLK_q;
+
+strcpy( (configTouche + ESPACE)->descriptif, "espace");
+(configTouche + ESPACE)->keyCode = SDLK_SPACE;

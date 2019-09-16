@@ -62,17 +62,7 @@ void affichage_map () {
         rectbloc.x += rectbloc.w;
     }
 
-    SDL_Rect rtest;
-    rtest.x = WIDTH / 2;
-    rtest.y = HEIGHT / 2;
-    rtest.w = 10;
-    rtest.h = 10;
-
-    ;
-
     SDL_RenderCopy( renderer, personnage.texture, NULL, &rectblocPers);
-
-    SDL_RenderCopy( renderer, (bloc + B_ROCHE)->blocTexture, NULL, &rtest);
 
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);

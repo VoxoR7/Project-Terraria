@@ -1,7 +1,7 @@
 #ifndef __TOUCHE_H__
 #define __TOUCHE_H__
 
-#define TOUCHE_NB 6
+#define TOUCHE_NB 7
 
 #define QUITTER 0
 #define ESCAPE 1
@@ -10,6 +10,7 @@
 #define GAUCHE 3
 #define MONTER 4
 #define DESCENDRE 5
+#define ESPACE 6
 
 #define TOUCHE_NULL 4294967295
 

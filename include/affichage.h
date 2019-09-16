@@ -3,8 +3,8 @@
 
 #include <SDL2/SDL.h>
 
-#define WIDTH 800
-#define HEIGHT 450
+#define WIDTH 1664
+#define HEIGHT 936
 
 #define NB_BLOC_WIDTH 32
 #define NB_BLOC_HEIGHT 18

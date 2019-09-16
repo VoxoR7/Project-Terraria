@@ -27,9 +27,11 @@ void personnage_init () {
 
     personnage.y = i;
     personnage.x = 0;
+    personnage.accel = 0;
+    personnage.vitesse = 0;
 
-    personnage.hitBoxW = 0.8 * ( WIDTH / NB_BLOC_WIDTH);
-    personnage.hitBoxH = 1.8 * ( HEIGHT / NB_BLOC_HEIGHT);
+    personnage.hitBoxW = TAILLE_PERSONNAGE_WIDTH * ( WIDTH / NB_BLOC_WIDTH);
+    personnage.hitBoxH = TAILLE_PERSONNAGE_HEIGHT * ( HEIGHT / NB_BLOC_HEIGHT);
 
     printf("W/NB_W H : %d\t\t%d\n", WIDTH / NB_BLOC_WIDTH, HEIGHT / NB_BLOC_HEIGHT);
     printf("HB[W][H] : %f\t\t%f\n", personnage.hitBoxW, personnage.hitBoxH);
@@ -56,9 +58,7 @@ void personnage_collision () {
         printf("%s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     #endif
 
-    map_colonne_t *colonneHitBoxRight, *colonneHitBoxLeft;
-
-    double hitBoxLeft = ( NB_BLOC_WIDTH - personnage.hitBoxW ) / 2; /* possiblement a refaire */
+    map_colonne_t *colonneHitBoxRight;
 
     if ( personnage.x + personnage.hitBoxW > WIDTH / NB_BLOC_WIDTH )
         colonneHitBoxRight = personnage.colonnePers->colonneSuivante;
@@ -68,6 +68,6 @@ void personnage_collision () {
     if (  *(personnage.colonnePers->bloc + (int)personnage.y - 1) == B_AIR && *(colonneHitBoxRight->bloc + (int)personnage.y - 1) == B_AIR )
         personnage.y --;
 
-    if ( *(personnage.colonnePers->bloc + (int)personnage.y ) != B_AIR )
+    if ( *(personnage.colonnePers->bloc + (int)personnage.y ) != B_AIR || *(colonneHitBoxRight->bloc + (int)personnage.y ) != B_AIR )
         personnage.y ++;
 }
